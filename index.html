@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Costa Neón</title>
+<meta name="description" content="Sandbox de crimen ochentero en el navegador: roba coches, haz encargos turbios y huye de la policía en una ciudad costera de neón.">
+<meta name="theme-color" content="#140a26">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="hud" class="hidden">
+  <div id="hud-tr">
+    <div id="clock">17:00</div>
+    <div id="weapon"><span id="wname">PISTOLA</span><span id="ammo">∞</span></div>
+    <div id="money">$00000000</div>
+    <div id="bars">
+      <div class="bar hp"><i id="hpbar"></i></div>
+      <div class="bar ar"><i id="arbar"></i></div>
+    </div>
+    <div id="stars"><b>★</b><b>★</b><b>★</b><b>★</b><b>★</b></div>
+  </div>
+  <div id="timer" class="hidden">0:00</div>
+  <canvas id="minimap"></canvas>
+  <div id="objective"></div>
+  <div id="toast"></div>
+  <div id="carname"></div>
+  <div id="radio"></div>
+  <div id="big"><h2></h2><p></p></div>
+</div>
+
+<div id="touch" class="hidden">
+  <div id="joy"><div id="knob"></div></div>
+  <button id="b-shoot" data-b="shoot">FUEGO</button>
+  <button id="b-enter" data-b="enter">COCHE</button>
+  <button id="b-hb" data-b="hb">FRENO</button>
+  <button id="b-weap" data-b="weap">ARMA</button>
+  <button id="b-radio" data-b="radio">RADIO</button>
+</div>
+
+<section id="title">
+  <div class="sky">
+    <div class="sun"></div>
+    <div class="floor"></div>
+  </div>
+  <div class="tbox">
+    <p class="kicker">1986 · edición de saldo</p>
+    <h1><span>COSTA</span><span>NEÓN</span></h1>
+    <p class="sub">Roba coches, haz encargos turbios para gente de dudosa reputación y despista a la poli en una ciudad playera bañada en neón.</p>
+    <button id="play" class="cta">JUGAR</button>
+    <div class="controls">
+      <div><kbd>WASD</kbd><span>andar / conducir</span></div>
+      <div><kbd>F</kbd><span>robar coche / bajar</span></div>
+      <div><kbd>Ratón</kbd><span>apuntar y disparar</span></div>
+      <div><kbd>Espacio</kbd><span>freno de mano · disparar a pie</span></div>
+      <div><kbd>Q</kbd><span>cambiar arma</span></div>
+      <div><kbd>R</kbd><span>cambiar emisora</span></div>
+      <div><kbd>H</kbd><span>claxon · <kbd>G</kbd> sirena</span></div>
+      <div><kbd>P</kbd><span>pausa</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pause" class="hidden">
+  <div class="pbox">
+    <h2>PAUSA</h2>
+    <ul id="stats"></ul>
+    <p class="tip">Los anillos de colores son tus contactos. El taller <b>PINTA RÁPIDA</b> borra tus estrellas por $100. Hay 10 casetes escondidos por la ciudad.</p>
+    <button id="resume" class="cta">SEGUIR</button>
+  </div>
+</section>
+
+<script src="js/core.js"></script>
+<script src="js/world.js"></script>
+<script src="js/render.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/missions.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
